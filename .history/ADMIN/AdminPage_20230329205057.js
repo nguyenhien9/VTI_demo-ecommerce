@@ -69,8 +69,9 @@ function addNewProduct() {
   productList.push(newProduct);
   console.log("listProduct", productList);
   localStorage.setItem("Product", JSON.stringify(productList));
-  renderProduct();
+  alert("Success!");
   resetForm();
+  renderProduct();
 }
 function resetForm() {
   document.querySelector("#id").value = "";
@@ -90,7 +91,7 @@ function renderProduct() {
   }
   document.querySelector("#tableBody").innerHTML = "";
   productList.forEach((product, index) => {
-    // index++;
+    index++;
     document.querySelector("#tableBody").innerHTML += `
     <tr>
     <td scope="row">${product.id}</td>

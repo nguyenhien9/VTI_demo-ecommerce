@@ -21,7 +21,7 @@ function showProduct(params) {
     "./contentProduct.html",
     "data",
     function (response, status, request) {
-      renderProduct(); // dom element
+      this; // dom element
     }
   );
 }
@@ -69,8 +69,9 @@ function addNewProduct() {
   productList.push(newProduct);
   console.log("listProduct", productList);
   localStorage.setItem("Product", JSON.stringify(productList));
-  renderProduct();
+  alert("Success!");
   resetForm();
+  renderProduct();
 }
 function resetForm() {
   document.querySelector("#id").value = "";
@@ -83,6 +84,7 @@ function resetForm() {
   document.querySelector("#category").value = "";
 }
 function renderProduct() {
+  productList = [];
   //Check localStorage
   if (localStorage && localStorage.getItem("productList")) {
     let products = JSON.parse(localStorage.getItem("productList"));
@@ -90,7 +92,7 @@ function renderProduct() {
   }
   document.querySelector("#tableBody").innerHTML = "";
   productList.forEach((product, index) => {
-    // index++;
+    index++;
     document.querySelector("#tableBody").innerHTML += `
     <tr>
     <td scope="row">${product.id}</td>

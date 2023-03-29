@@ -90,7 +90,7 @@ function renderProduct() {
   }
   document.querySelector("#tableBody").innerHTML = "";
   productList.forEach((product, index) => {
-    // index++;
+    index++;
     document.querySelector("#tableBody").innerHTML += `
     <tr>
     <td scope="row">${product.id}</td>

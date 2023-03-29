@@ -1,12 +1,13 @@
-$(function () {
-  loadComponent();
+$(document).ready(function () {
+  $(function () {
+    loadComponent();
+  });
+  function loadComponent() {
+    $(".adminMenu").load("./adminMenu.html");
+    $(".adminSideBar").load("./adminSideBar.html");
+    // $(".contentProduct").load("./contentProduct.html");
+  }
 });
-function loadComponent() {
-  $(".adminMenu").load("./adminMenu.html");
-  $(".adminSideBar").load("./adminSideBar.html");
-  // $(".contentProduct").load("./contentProduct.html");
-}
-
 function showManufacturer(params) {
   $(".contentProduct").load(
     "./Manufacturer.html",
@@ -21,7 +22,7 @@ function showProduct(params) {
     "./contentProduct.html",
     "data",
     function (response, status, request) {
-      renderProduct(); // dom element
+      renderProductList(); // dom element
     }
   );
 }
@@ -44,8 +45,63 @@ function showAccount() {
   );
 }
 
-let productList = [];
+function renderProductList() {
+  for (let index = 1; index < 7; index++) {
+    $("#tableBody").append(`<tr>
+    <td scope="row">${index}</td>
+    <td>SAMSUNG Galaxy S22 Ultra</td>
+    <td>30.990.000<sup>đ</sup></td>
+    <td>
+      6.9 inches, Chip MediaTek Helio G65 (12nm) mạnh mẽ. Ram
+      4G, Pin 7000mAh
+    </td>
+    <td>ProductDetail1</td>
+    <td>5</td>
+    <td>image1.jpg</td>
+    <td>SAMSUNG</td>
+    <td>Điện thoại</td>
+    <td>
+      <button type="button" class="btn btn-warning text-light">
+        Edit
+      </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger text-white">
+        Delete
+      </button>
+    </td>
+  </tr> -->
+  <!-- Row-2 -->
+  <!-- <tr>
+    <td scope="row">2</td>
+    <td>SAMSUNG Galaxy S22 Ultra</td>
+    <td>30.990.000<sup>đ</sup></td>
+    <td>
+      6.9 inches, Chip MediaTek Helio G65 (12nm) mạnh mẽ. Ram
+      4G, Pin 7000mAh
+    </td>
+    <td>ProductDetail1</td>
+    <td>5</td>
+    <td>image2.jpg</td>
+    <td>SAMSUNG</td>
+    <td>Điện thoại</td>
+    <td>
+      <button type="button" class="btn btn-warning text-light">
+        Edit
+      </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger text-white">
+        Delete
+      </button>
+    </td>
+  </tr>
+    `);
+  }
+}
+
 function addNewProduct() {
+  let productList = [];
   let getId = document.querySelector("#id").value;
   let getName = document.querySelector("#name").value;
   let getPrice = document.querySelector("#price").value;
@@ -67,10 +123,10 @@ function addNewProduct() {
   };
   // Push vao mang productList
   productList.push(newProduct);
-  console.log("listProduct", productList);
-  localStorage.setItem("Product", JSON.stringify(productList));
-  renderProduct();
+  localStorage.setItem("Product", JSON.stringify(newProduct));
+  alert("Success!");
   resetForm();
+  renderProduct();
 }
 function resetForm() {
   document.querySelector("#id").value = "";
@@ -81,38 +137,4 @@ function resetForm() {
   document.querySelector("#image").value = "";
   document.querySelector("#manufacturer").value = "";
   document.querySelector("#category").value = "";
-}
-function renderProduct() {
-  //Check localStorage
-  if (localStorage && localStorage.getItem("productList")) {
-    let products = JSON.parse(localStorage.getItem("productList"));
-    productList = products;
-  }
-  document.querySelector("#tableBody").innerHTML = "";
-  productList.forEach((product, index) => {
-    // index++;
-    document.querySelector("#tableBody").innerHTML += `
-    <tr>
-    <td scope="row">${product.id}</td>
-    <td>${product.name}</td>
-    <td>${product.price}<sup>đ</sup></td>
-    <td>${product.info}</td>
-    <td>${product.detail}</td>
-    <td>${product.star}</td>
-    <td>${product.imageName}</td>
-    <td>${product.manufacturer}</td>
-    <td>${product.category}</td>
-    <td>
-      <button type="button" class="btn btn-warning text-light">
-        Edit
-      </button>
-    </td>
-    <td>
-      <button type="button" class="btn btn-danger text-white">
-        Delete
-      </button>
-    </td>
-  </tr> 
-    `;
-  });
 }

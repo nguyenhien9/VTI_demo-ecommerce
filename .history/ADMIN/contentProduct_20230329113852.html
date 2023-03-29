@@ -133,7 +133,7 @@
                       name="id"
                       id="id"
                       class="form-control"
-                      placeholder="Input Id {1,2,....}"
+                      placeholder="Input Id"
                     />
                   </div>
                   <div class="mb-3">
@@ -144,16 +144,6 @@
                       id="name"
                       class="form-control"
                       placeholder="Input Name"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="" class="form-label fw-bold">Price</label>
-                    <input
-                      type="text"
-                      name="price"
-                      id="price"
-                      class="form-control"
-                      placeholder="Input price"
                     />
                   </div>
                   <div class="mb-3">
@@ -202,14 +192,14 @@
                     >
                     <select
                       class="form-select form-select-md text-secondary"
-                      name="manufacturer"
-                      id="manufacturer"
+                      name=""
+                      id=""
                     >
                       <option selected>--Choose a Manufacturer--</option>
-                      <option value="SAMSUNG">SAMSUNG</option>
-                      <option value="APPLE">APPLE</option>
-                      <option value="XIAOMI">XIAOMI</option>
-                      <option value="OPPO">OPPO</option>
+                      <option value="1">SAMSUNG</option>
+                      <option value="2">APPLE</option>
+                      <option value="3">XIAOMI</option>
+                      <option value="4">OPPO</option>
                     </select>
                   </div>
                   <div class="mb-3">
@@ -217,12 +207,12 @@
                     <select
                       class="form-select form-select-md text-secondary"
                       name=""
-                      id="category"
+                      id=""
                     >
                       <option selected>--Choose a Category--</option>
-                      <option value="Mobile Phone">Mobile Phone</option>
-                      <option value="Tablet">Tablet</option>
-                      <option value="Laptop">Laptop</option>
+                      <option value="1">Mobile Phone</option>
+                      <option value="2">Tablet</option>
+                      <option value="3">Laptop</option>
                     </select>
                   </div>
 
@@ -232,7 +222,7 @@
                     <button
                       type="button"
                       class="btn btn-primary fw-semibold"
-                      onclick="addNewProduct()"
+                      onclick="createNewProduct()"
                     >
                       Save
                     </button>

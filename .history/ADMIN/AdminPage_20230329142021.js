@@ -104,7 +104,6 @@ function addNewProduct() {
   let productList = [];
   let getId = document.querySelector("#id").value;
   let getName = document.querySelector("#name").value;
-  let getPrice = document.querySelector("#price").value;
   let getInfo = document.querySelector("#info").value;
   let getDetail = document.querySelector("#detail").value;
   let getStar = document.querySelector("#star").value;
@@ -114,7 +113,6 @@ function addNewProduct() {
   let newProduct = {
     id: getId,
     name: getName,
-    price: getPrice,
     info: getInfo,
     detail: getDetail,
     star: getStar,
@@ -125,15 +123,20 @@ function addNewProduct() {
   productList.push(newProduct);
   localStorage.setItem("Product", JSON.stringify(newProduct));
   alert("Success!");
-  resetForm();
+  // resetForm();
 }
 function resetForm() {
-  document.querySelector("#id").value = "";
-  document.querySelector("#name").value = "";
-  document.querySelector("#info").value = "";
-  document.querySelector("#detail").value = "";
-  document.querySelector("#star").value = "";
-  document.querySelector("#image").value = "";
-  document.querySelector("#manufacturer").value = "";
-  document.querySelector("#category").value = "";
+  document.querySelector("#id").value;
+
+  document.querySelector("#name").value;
+
+  document.querySelector("#info").value;
+  document.querySelector("#detail").value;
+  document.querySelector("#star").value;
+
+  document.querySelector("#image").value;
+
+  document.querySelector("#manufacturer").value;
+
+  document.querySelector("#category").value;
 }

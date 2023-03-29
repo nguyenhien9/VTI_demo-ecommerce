@@ -102,38 +102,22 @@ function renderProductList() {
 
 function addNewProduct() {
   let productList = [];
-  let getId = document.querySelector("#id").value;
-  let getName = document.querySelector("#name").value;
-  let getPrice = document.querySelector("#price").value;
-  let getInfo = document.querySelector("#info").value;
-  let getDetail = document.querySelector("#detail").value;
-  let getStar = document.querySelector("#star").value;
-  // let getImage = getImgName(document.querySelector("#image").value);
-  let getManufacturer = document.querySelector("#manufacturer").value;
-  let getCategory = document.querySelector("#category").value;
+  let id = document.querySelector("#id").value;
+  let name = document.querySelector("#name").value;
+  let info = document.querySelector("#info").value;
+  let detail = document.querySelector("#detail").value;
+  let star = document.querySelector("#star").value;
+  let manufacturer = document.querySelector("#manufacturer").value;
+  let category = document.querySelector("#category").value;
   let newProduct = {
-    id: getId,
-    name: getName,
-    price: getPrice,
-    info: getInfo,
-    detail: getDetail,
-    star: getStar,
-    manufacturer: getManufacturer,
-    category: getCategory,
+    id: id,
+    name: name,
+    info: info,
+    detail: detail,
+    star: star,
+    manufacturer: manufacturer,
+    category: category,
   };
-  // Push vao mang productList
   productList.push(newProduct);
   localStorage.setItem("Product", JSON.stringify(newProduct));
-  alert("Success!");
-  resetForm();
-}
-function resetForm() {
-  document.querySelector("#id").value = "";
-  document.querySelector("#name").value = "";
-  document.querySelector("#info").value = "";
-  document.querySelector("#detail").value = "";
-  document.querySelector("#star").value = "";
-  document.querySelector("#image").value = "";
-  document.querySelector("#manufacturer").value = "";
-  document.querySelector("#category").value = "";
 }

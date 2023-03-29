@@ -104,20 +104,19 @@ function addNewProduct() {
   let productList = [];
   let getId = document.querySelector("#id").value;
   let getName = document.querySelector("#name").value;
-  let getPrice = document.querySelector("#price").value;
   let getInfo = document.querySelector("#info").value;
   let getDetail = document.querySelector("#detail").value;
   let getStar = document.querySelector("#star").value;
-  // let getImage = getImgName(document.querySelector("#image").value);
+  let getImage = getImgName(document.querySelector("#image").value);
   let getManufacturer = document.querySelector("#manufacturer").value;
   let getCategory = document.querySelector("#category").value;
   let newProduct = {
     id: getId,
     name: getName,
-    price: getPrice,
     info: getInfo,
     detail: getDetail,
     star: getStar,
+    image: getImage,
     manufacturer: getManufacturer,
     category: getCategory,
   };
@@ -128,12 +127,12 @@ function addNewProduct() {
   resetForm();
 }
 function resetForm() {
-  document.querySelector("#id").value = "";
-  document.querySelector("#name").value = "";
-  document.querySelector("#info").value = "";
-  document.querySelector("#detail").value = "";
-  document.querySelector("#star").value = "";
-  document.querySelector("#image").value = "";
-  document.querySelector("#manufacturer").value = "";
-  document.querySelector("#category").value = "";
+  getId = "";
+  getName = "";
+  getInfo = "";
+  getDetail = "";
+  getStar = "";
+  getImage = "";
+  getManufacturer = "";
+  getCategory = "";
 }

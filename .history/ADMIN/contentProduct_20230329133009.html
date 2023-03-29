@@ -134,6 +134,7 @@
                       id="id"
                       class="form-control"
                       placeholder="Input Id {1,2,....}"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -144,16 +145,7 @@
                       id="name"
                       class="form-control"
                       placeholder="Input Name"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="" class="form-label fw-bold">Price</label>
-                    <input
-                      type="text"
-                      name="price"
-                      id="price"
-                      class="form-control"
-                      placeholder="Input price"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -164,6 +156,7 @@
                       id="info"
                       rows="3"
                       placeholder="Input Info"
+                      required
                     ></textarea>
                   </div>
                   <div class="mb-3">
@@ -174,6 +167,7 @@
                       id="detail"
                       rows="4"
                       placeholder="Input detail"
+                      required
                     ></textarea>
                   </div>
                   <div class="mb-3">
@@ -184,6 +178,7 @@
                       id="star"
                       class="form-control"
                       placeholder="Input field"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -194,6 +189,7 @@
                       id="image"
                       class="form-control text-secondary"
                       accept="image/*"
+                      required
                     />
                   </div>
                   <div class="mb-3">
@@ -204,6 +200,7 @@
                       class="form-select form-select-md text-secondary"
                       name="manufacturer"
                       id="manufacturer"
+                      required
                     >
                       <option selected>--Choose a Manufacturer--</option>
                       <option value="SAMSUNG">SAMSUNG</option>
@@ -218,6 +215,7 @@
                       class="form-select form-select-md text-secondary"
                       name=""
                       id="category"
+                      required
                     >
                       <option selected>--Choose a Category--</option>
                       <option value="Mobile Phone">Mobile Phone</option>
@@ -232,13 +230,14 @@
                     <button
                       type="button"
                       class="btn btn-primary fw-semibold"
-                      onclick="addNewProduct()"
+                      onclick="localSave()"
                     >
                       Save
                     </button>
                     <button
                       type="button"
                       class="btn btn-warning text-light fw-semibold"
+                      onclick="resetProduct()"
                     >
                       Reset
                     </button>

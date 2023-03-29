@@ -181,7 +181,7 @@ function fetchProductList() {
     return `
       <div class="col-sm-3">
               <div class="row justify-content-start align-items-center g-2 ">
-                <img src="${item.image}" width="130px" height ="210px" alt=""/>
+                <img key = "${item.id}" src="${item.image}" width="130px" height ="210px" alt=""/>
               </div>
               
               <div class="row justify-content-center align-items-center g-2">

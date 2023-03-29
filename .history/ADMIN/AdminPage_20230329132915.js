@@ -44,7 +44,9 @@ function showAccount() {
     }
   );
 }
-
+function createNewProduct() {
+  alert("Already Add!");
+}
 function renderProductList() {
   for (let index = 1; index < 7; index++) {
     $("#tableBody").append(`<tr>
@@ -99,41 +101,31 @@ function renderProductList() {
     `);
   }
 }
-
-function addNewProduct() {
-  let productList = [];
+function validateProductAdd() {
   let getId = document.querySelector("#id").value;
   let getName = document.querySelector("#name").value;
-  let getPrice = document.querySelector("#price").value;
   let getInfo = document.querySelector("#info").value;
   let getDetail = document.querySelector("#detail").value;
   let getStar = document.querySelector("#star").value;
-  // let getImage = getImgName(document.querySelector("#image").value);
+  let getImg = document.querySelector("#image").value;
   let getManufacturer = document.querySelector("#manufacturer").value;
   let getCategory = document.querySelector("#category").value;
-  let newProduct = {
+  stt = false;
+
+  if (getId == "" || getId == NaN) {
+  } else {
+  }
+}
+function localSave() {
+  let product = {
     id: getId,
     name: getName,
-    price: getPrice,
     info: getInfo,
     detail: getDetail,
     star: getStar,
+    Image: getImg,
     manufacturer: getManufacturer,
     category: getCategory,
   };
-  // Push vao mang productList
-  productList.push(newProduct);
-  localStorage.setItem("Product", JSON.stringify(newProduct));
-  alert("Success!");
-  resetForm();
-}
-function resetForm() {
-  document.querySelector("#id").value = "";
-  document.querySelector("#name").value = "";
-  document.querySelector("#info").value = "";
-  document.querySelector("#detail").value = "";
-  document.querySelector("#star").value = "";
-  document.querySelector("#image").value = "";
-  document.querySelector("#manufacturer").value = "";
-  document.querySelector("#category").value = "";
+  localStorage.setItem("productInfo", JSON.stringify(product));
 }

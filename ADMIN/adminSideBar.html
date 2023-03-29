@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="col-md-12">
+      <h4 class="fw-bold">Danh mục</h4>
+      <div class="list-group text-center">
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          onclick="showManufacturer()"
+        >
+          Manufacturer
+        </button>
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          onclick="showCategory()"
+        >
+          Category
+        </button>
+        <button
+          type="button"
+          class="list-group-item list-group-item-action product-btn"
+          onclick="showProduct()"
+        >
+          Product
+        </button>
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          onclick="showAccount()"
+        >
+          Account
+        </button>
+      </div>
+
+      <h4 class="fw-bold">Manufacturers</h4>
+      <div class="list-group text-center">
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          aria-current="true"
+        >
+          SAMSUNG
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">
+          APPLE
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">
+          XIAOMI
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">
+          OPPO
+        </button>
+      </div>
+      <h4 class="fw-bold">Category</h4>
+      <ul class="list-group">
+        <li class="list-group-item" aria-current="true">
+          <div class="mb-3">
+            <select class="form-select form-select-md" name="" id="">
+              <option selected>Category</option>
+              <option value="1">Mobile Phone</option>
+              <option value="2">Tablet</option>
+              <option value="3">Laptop</option>
+            </select>
+          </div>
+        </li>
+        <li class="list-group-item" aria-current="true">
+          <button type="button" class="btn btn-outline-secondary">
+            Filter
+          </button>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

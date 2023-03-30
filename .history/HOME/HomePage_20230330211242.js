@@ -47,6 +47,8 @@ function fetchProductList() {
       `;
     });
     document.querySelector(".ProductList").innerHTML = productRender;
+    console.log(productList);
+    ratingStar();
   }
 }
 function getRatingStar(star) {
@@ -58,12 +60,6 @@ function getRatingStar(star) {
     </li>
     `;
   }
-  for (let i = 0; i < 5 - star; i++) {
-    ratingStar += `
-    <li>
-    <i class="fa fa-star" aria-hidden="true"></i>
-    </li>
-    `;
-  }
+  for (let i = 0; i < 5 - star; i++) {}
   return ratingStar;
 }

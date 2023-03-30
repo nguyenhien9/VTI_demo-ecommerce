@@ -47,6 +47,7 @@ function fetchProductList() {
       `;
     });
     document.querySelector(".ProductList").innerHTML = productRender;
+    console.log(productList);
   }
 }
 function getRatingStar(star) {
@@ -65,5 +66,5 @@ function getRatingStar(star) {
     </li>
     `;
   }
-  return ratingStar;
+  // return ratingStar;
 }

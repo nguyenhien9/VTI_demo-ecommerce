@@ -41,5 +41,14 @@ function fetchProductList() {
       `;
     });
     document.querySelector(".ProductList").innerHTML = productRender;
+    ratingStar();
+  }
+}
+function ratingStar() {
+  let getRatingStar = productList.forEach((item) => {
+    return console.log(item.star);
+  });
+  for (let i = 0; i < getRatingStar; i++) {
+    console.log(getRatingStar);
   }
 }

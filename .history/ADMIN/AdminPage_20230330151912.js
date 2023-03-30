@@ -70,7 +70,6 @@ function addNewProduct() {
   productList.push(newProduct);
   console.log("listProduct", productList);
   localStorage.setItem("Product", JSON.stringify(productList));
-  console.log(localStorage.setItem("Product", JSON.stringify(productList)));
   resetForm();
   renderProduct();
 }
@@ -78,7 +77,6 @@ function resetForm() {
   document.querySelector("#id").value = "";
   document.querySelector("#name").value = "";
   document.querySelector("#info").value = "";
-  document.querySelector("#price").value = "";
   document.querySelector("#detail").value = "";
   document.querySelector("#star").value = "";
   document.querySelector("#image").value = "";
@@ -102,7 +100,7 @@ function renderProduct() {
     <td>${product.info}</td>
     <td>${product.detail}</td>
     <td>${product.star}</td>
-    <td>${product.image}</td>
+    <td>${product.imageName}</td>
     <td>${product.manufacturer}</td>
     <td>${product.category}</td>
     <td>
@@ -120,7 +118,7 @@ function renderProduct() {
   });
 }
 function getImgName(pathImage) {
-  let itemArray = pathImage.split("\\");
+  let itemArray = pathImage.split(".");
   var imageName = itemArray[itemArray.length - 1];
   return imageName;
 }

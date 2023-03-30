@@ -43,3 +43,9 @@ function fetchProductList() {
     document.querySelector(".ProductList").innerHTML = productRender;
   }
 }
+function ratingStar() {
+  let getRatingStar = productList.map((item) => {
+    return item.star;
+  });
+  console.log(getRatingStar);
+}

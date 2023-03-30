@@ -52,7 +52,7 @@ function addNewProduct() {
   let getInfo = document.querySelector("#info").value;
   let getDetail = document.querySelector("#detail").value;
   let getStar = document.querySelector("#star").value;
-  let getImage = getImgName(document.querySelector("#image").value);
+  // let getImage = getImgName(document.querySelector("#image").value);
   let getManufacturer = document.querySelector("#manufacturer").value;
   let getCategory = document.querySelector("#category").value;
   let newProduct = {
@@ -62,7 +62,6 @@ function addNewProduct() {
     info: getInfo,
     detail: getDetail,
     star: getStar,
-    image: getImage,
     manufacturer: getManufacturer,
     category: getCategory,
   };
@@ -70,15 +69,13 @@ function addNewProduct() {
   productList.push(newProduct);
   console.log("listProduct", productList);
   localStorage.setItem("Product", JSON.stringify(productList));
-  console.log(localStorage.setItem("Product", JSON.stringify(productList)));
   resetForm();
   renderProduct();
 }
 function resetForm() {
-  document.querySelector("#id").value = "";
+  // document.querySelector("#id").value = "";
   document.querySelector("#name").value = "";
   document.querySelector("#info").value = "";
-  document.querySelector("#price").value = "";
   document.querySelector("#detail").value = "";
   document.querySelector("#star").value = "";
   document.querySelector("#image").value = "";
@@ -92,7 +89,7 @@ function renderProduct() {
     productList = products;
   }
   document.querySelector("#tableBody").innerHTML = "";
-  productList.forEach((product) => {
+  productList.forEach((product, index) => {
     // index++;
     document.querySelector("#tableBody").innerHTML += `
     <tr>
@@ -102,7 +99,7 @@ function renderProduct() {
     <td>${product.info}</td>
     <td>${product.detail}</td>
     <td>${product.star}</td>
-    <td>${product.image}</td>
+    <td>${product.imageName}</td>
     <td>${product.manufacturer}</td>
     <td>${product.category}</td>
     <td>
@@ -118,9 +115,4 @@ function renderProduct() {
   </tr> 
     `;
   });
-}
-function getImgName(pathImage) {
-  let itemArray = pathImage.split("\\");
-  var imageName = itemArray[itemArray.length - 1];
-  return imageName;
 }

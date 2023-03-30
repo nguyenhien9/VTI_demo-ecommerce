@@ -13,11 +13,14 @@ $(document).ready(function () {
     }
   });
 });
-let productList = [];
+
 function fetchProductList() {
+  let productList = [];
   if (localStorage && localStorage.getItem("Product")) {
     let getProducts = JSON.parse(localStorage.getItem("Product"));
+
     productList = getProducts;
+
     let productRender = productList.map(function (item) {
       return `
       <div class="col-sm-3">
@@ -34,7 +37,7 @@ function fetchProductList() {
           ${item.rating}
         </div>
         <div class="row d-flex align-items-center g-2">
-          <a href="#!" class="text-reset text-decoration-none">${item.price} <sup><u>đ</u></sup>
+          <a href="#!" class="text-reset text-decoration-none">${item.price}<sup><u>đ</u></sup>
             <i class="fa fa-shopping-cart text-danger fs-3 ms-2" aria-hidden="true"></i></a>
         </div>
       </div>

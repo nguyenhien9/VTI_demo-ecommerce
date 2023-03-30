@@ -13,11 +13,14 @@ $(document).ready(function () {
     }
   });
 });
-let productList = [];
+
 function fetchProductList() {
+  let productList = [];
   if (localStorage && localStorage.getItem("Product")) {
     let getProducts = JSON.parse(localStorage.getItem("Product"));
+
     productList = getProducts;
+
     let productRender = productList.map(function (item) {
       return `
       <div class="col-sm-3">

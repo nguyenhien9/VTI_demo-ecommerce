@@ -17,7 +17,9 @@ let productList = [];
 function fetchProductList() {
   if (localStorage && localStorage.getItem("Product")) {
     let getProducts = JSON.parse(localStorage.getItem("Product"));
+
     productList = getProducts;
+
     let productRender = productList.map(function (item) {
       return `
       <div class="col-sm-3">
@@ -42,4 +44,7 @@ function fetchProductList() {
     });
     document.querySelector(".ProductList").innerHTML = productRender;
   }
+}
+function getRatingStar() {
+  let ratingStar = productList.star;
 }

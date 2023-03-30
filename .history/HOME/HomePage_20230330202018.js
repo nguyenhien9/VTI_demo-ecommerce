@@ -1,0 +1,61 @@
+$(document).ready(function () {
+  $(function () {
+    loadComponent();
+    setTimeout(function () {
+      fetchProductList();
+    }, 200);
+
+    function loadComponent() {
+      $(".Header").load("./Menu.html");
+      $(".Banner").load("./Banner.html");
+      $(".Product").load("./Product.html");
+      $(".Footer").load("./Footer.html");
+    }
+  });
+});
+
+function fetchProductList() {
+  let productList = [];
+  if (localStorage && localStorage.getItem("Product")) {
+    let getProducts = JSON.parse(localStorage.getItem("Product"));
+    console.log(getProducts);
+    productList = getProducts;
+    console.log(productList);
+    let productRender = productList.map(function (item) {
+      return `
+      <div class="col-sm-3">
+<div class="row justify-content-start align-items-center g-2 ">
+<img src="${item.image}" width="130px" height ="210px" alt=""/>
+</div>
+
+              <div class="row justify-content-center align-items-center g-2">
+                <p class="h3 font-weight-bold">${item.name}</p>
+              </div>
+
+              <div class="row justify-content-center align-items-center g-2">
+                <p class="h4">Hãng sản xuất: ${item.brand}</p>
+              </div>
+
+              <div class="row justify-content-center align-items-center g-2">
+                ${item.rating}
+              </div>
+
+              <div class="row d-flex align-items-center g-2">
+                <a href="#!" class="text-reset text-decoration-none"
+                  >${item.price}<u>đ</u>
+                  <i
+                    class="fa fa-shopping-cart text-danger fs-3 ms-2"
+                    aria-hidden="true"
+                  ></i
+                ></a>
+              </div>
+            </div>
+      
+      
+      
+      
+      `;
+    });
+    document.querySelector(".ProductList").innerHTML = productRender;
+  }
+}

@@ -70,7 +70,6 @@ function addNewProduct() {
   productList.push(newProduct);
   console.log("listProduct", productList);
   localStorage.setItem("Product", JSON.stringify(productList));
-  console.log(localStorage.setItem("Product", JSON.stringify(productList)));
   resetForm();
   renderProduct();
 }

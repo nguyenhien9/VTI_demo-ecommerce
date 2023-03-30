@@ -70,7 +70,6 @@ function addNewProduct() {
   productList.push(newProduct);
   console.log("listProduct", productList);
   localStorage.setItem("Product", JSON.stringify(productList));
-  console.log(localStorage.setItem("Product", JSON.stringify(productList)));
   resetForm();
   renderProduct();
 }
@@ -78,7 +77,6 @@ function resetForm() {
   document.querySelector("#id").value = "";
   document.querySelector("#name").value = "";
   document.querySelector("#info").value = "";
-  document.querySelector("#price").value = "";
   document.querySelector("#detail").value = "";
   document.querySelector("#star").value = "";
   document.querySelector("#image").value = "";

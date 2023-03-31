@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContentProduct</title>
+  </head>
+  <body>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+      <br />
+      <br />
+      <!-- Search -->
+      <div class="row justify-content-center g-2">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <div class="row justify-content-center align-items-center g-2">
+            <form
+              class="d-flex border rounded w-100"
+              style="padding: 8px 8px 8px 20px"
+              role="search"
+            >
+              <div class="col-8 pe-4">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+              </div>
+              <div class="col-4">
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Search -->
+      <!-- Add product -->
+      <br />
+
+      <div class="row justify-content-center border rounded g-2">
+        <div class="row justify-content-center g-2 ps-2">
+          <div class="col-12">
+            <button
+              type="button"
+              class="btn btn-info text-light"
+              data-bs-toggle="modal"
+              data-bs-target="#modalId"
+            >
+              Add new
+            </button>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center g-2">
+          <div class="col-sm-12">
+            <div class="table-responsive" style="font-size: 14px">
+              <table class="table table-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Info</th>
+                    <th scope="col">Detail</th>
+                    <th scope="col">Star</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">NSX</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <!-- Row-1 -->
+
+                  <!-- Row-2 -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center g-2">
+          <div class="col-sm-12">
+            <nav aria-label="Page navigation">
+              <ul class="pagination ps-4">
+                <li class="page-item" aria-current="page">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <!--  Modal Add New  -->
+      <!-- Modal Body-->
+      <div
+        class="modal fade"
+        id="modalId"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">Create New Product</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="col-12">
+                  <!-- Product Properties -->
+
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Id</label>
+                    <input
+                      type="text"
+                      name="id"
+                      id="id"
+                      class="form-control"
+                      placeholder="Input Id {1,2,....}"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="form-control"
+                      placeholder="Input Name"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Price</label>
+                    <input
+                      type="text"
+                      name="price"
+                      id="price"
+                      class="form-control"
+                      placeholder="Input price"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Info</label>
+                    <textarea
+                      class="form-control"
+                      name="info"
+                      id="info"
+                      rows="3"
+                      placeholder="Input Info"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Detail</label>
+                    <textarea
+                      class="form-control"
+                      name="detail"
+                      id="detail"
+                      rows="4"
+                      placeholder="Input detail"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Star</label>
+                    <input
+                      type="text"
+                      name="star"
+                      id="star"
+                      class="form-control"
+                      placeholder="Input field"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Image</label>
+                    <input
+                      type="file"
+                      name="image"
+                      id="image"
+                      class="form-control text-secondary"
+                      accept="image/*"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold"
+                      >Manufacturer</label
+                    >
+                    <select
+                      class="form-select form-select-md text-secondary"
+                      name="manufacturer"
+                      id="manufacturer"
+                    >
+                      <option selected>--Choose a Manufacturer--</option>
+                      <option value="SAMSUNG">SAMSUNG</option>
+                      <option value="APPLE">APPLE</option>
+                      <option value="XIAOMI">XIAOMI</option>
+                      <option value="OPPO">OPPO</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Category</label>
+                    <select
+                      class="form-select form-select-md text-secondary"
+                      name=""
+                      id="category"
+                    >
+                      <option selected>--Choose a Category--</option>
+                      <option value="Mobile Phone">Mobile Phone</option>
+                      <option value="Tablet">Tablet</option>
+                      <option value="Laptop">Laptop</option>
+                    </select>
+                  </div>
+
+                  <!-- Action -->
+
+                  <div class="col-12">
+                    <button
+                      type="button"
+                      class="btn btn-primary fw-semibold"
+                      onclick="addNewProduct()"
+                    >
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-warning text-light fw-semibold"
+                    >
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="col-12">
+                <button
+                  type="button"
+                  class="btn btn-danger float-end"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Edit -->
+      <div
+        class="modal fade"
+        id="modalId"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">Create New Product</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="col-12">
+                  <!-- Product Properties -->
+
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Id</label>
+                    <input
+                      type="text"
+                      name="id"
+                      id="id"
+                      class="form-control"
+                      placeholder="Input Id {1,2,....}"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="form-control"
+                      placeholder="Input Name"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Price</label>
+                    <input
+                      type="text"
+                      name="price"
+                      id="price"
+                      class="form-control"
+                      placeholder="Input price"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Info</label>
+                    <textarea
+                      class="form-control"
+                      name="info"
+                      id="info"
+                      rows="3"
+                      placeholder="Input Info"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Detail</label>
+                    <textarea
+                      class="form-control"
+                      name="detail"
+                      id="detail"
+                      rows="4"
+                      placeholder="Input detail"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Star</label>
+                    <input
+                      type="text"
+                      name="star"
+                      id="star"
+                      class="form-control"
+                      placeholder="Input field"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Image</label>
+                    <input
+                      type="file"
+                      name="image"
+                      id="image"
+                      class="form-control text-secondary"
+                      accept="image/*"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold"
+                      >Manufacturer</label
+                    >
+                    <select
+                      class="form-select form-select-md text-secondary"
+                      name="manufacturer"
+                      id="manufacturer"
+                    >
+                      <option selected>--Choose a Manufacturer--</option>
+                      <option value="SAMSUNG">SAMSUNG</option>
+                      <option value="APPLE">APPLE</option>
+                      <option value="XIAOMI">XIAOMI</option>
+                      <option value="OPPO">OPPO</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label fw-bold">Category</label>
+                    <select
+                      class="form-select form-select-md text-secondary"
+                      name=""
+                      id="category"
+                    >
+                      <option selected>--Choose a Category--</option>
+                      <option value="Mobile Phone">Mobile Phone</option>
+                      <option value="Tablet">Tablet</option>
+                      <option value="Laptop">Laptop</option>
+                    </select>
+                  </div>
+
+                  <!-- Action -->
+
+                  <div class="col-12">
+                    <button
+                      type="button"
+                      class="btn btn-primary fw-semibold"
+                      onclick=""
+                    >
+                      Update
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-warning text-light fw-semibold"
+                    >
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="col-12">
+                <button
+                  type="button"
+                  class="btn btn-danger float-end"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

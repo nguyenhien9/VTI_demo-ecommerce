@@ -94,7 +94,7 @@ function renderProduct() {
   document.querySelector("#tableBody").innerHTML = "";
   productList.forEach((product, index) => {
     let productId = index;
-
+    index++;
     document.querySelector("#tableBody").innerHTML += `
     <tr>
     <td scope="row">${product.id}</td>
@@ -127,13 +127,9 @@ function getImgName(pathImage) {
 }
 //Xóa sản phẩm
 function deleteProduct(id) {
-  let confirmDelete = confirm("Delete it?");
-  if (confirmDelete) {
-    productList.splice(id, 1);
-    /**Lưu lại productList sau khi cắt vào local */
-    localStorage.setItem("Product", JSON.stringify(productList));
-    renderProduct();
-  } else {
-    alert("No products to delete!");
+  if (localStorage && localStorage.getItem("Product")) {
+    let productDelete = JSON.parse(localStorage.getItem("Product"));
+    productDelete.splice(id, 1);
+    alert(productDelete);
   }
 }

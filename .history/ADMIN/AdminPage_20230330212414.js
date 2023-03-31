@@ -2,7 +2,8 @@ $(function () {
   loadComponent();
 });
 function loadComponent() {
-  $(".adminMenu").load("./adminMenu.html");
+  // $(".adminMenu").load("./adminMenu.html");
+  window.location("./adminMenu.html");
   $(".adminSideBar").load("./adminSideBar.html");
   // $(".contentProduct").load("./contentProduct.html");
 }
@@ -68,9 +69,9 @@ function addNewProduct() {
   };
   // Push vao mang productList
   productList.push(newProduct);
-  // console.log("listProduct", productList);
+  console.log("listProduct", productList);
   localStorage.setItem("Product", JSON.stringify(productList));
-  // console.log(localStorage.setItem("Product", JSON.stringify(productList)));
+  console.log(localStorage.setItem("Product", JSON.stringify(productList)));
   resetForm();
   renderProduct();
 }
@@ -92,9 +93,8 @@ function renderProduct() {
     productList = products;
   }
   document.querySelector("#tableBody").innerHTML = "";
-  productList.forEach((product, index) => {
-    let productId = index;
-
+  productList.forEach((product) => {
+    // index++;
     document.querySelector("#tableBody").innerHTML += `
     <tr>
     <td scope="row">${product.id}</td>
@@ -107,12 +107,12 @@ function renderProduct() {
     <td>${product.manufacturer}</td>
     <td>${product.category}</td>
     <td>
-      <button type="button" class="btn btn-warning text-light" >
+      <button type="button" class="btn btn-warning text-light">
         Edit
       </button>
     </td>
     <td>
-      <button type="button" class="btn btn-danger text-white" onclick="deleteProduct(${productId})">
+      <button type="button" class="btn btn-danger text-white">
         Delete
       </button>
     </td>
@@ -124,16 +124,4 @@ function getImgName(pathImage) {
   let itemArray = pathImage.split("\\");
   var imageName = itemArray[itemArray.length - 1];
   return imageName;
-}
-//Xóa sản phẩm
-function deleteProduct(id) {
-  let confirmDelete = confirm("Delete it?");
-  if (confirmDelete) {
-    productList.splice(id, 1);
-    /**Lưu lại productList sau khi cắt vào local */
-    localStorage.setItem("Product", JSON.stringify(productList));
-    renderProduct();
-  } else {
-    alert("No products to delete!");
-  }
 }

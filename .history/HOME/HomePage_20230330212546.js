@@ -27,10 +27,10 @@ function fetchProductList() {
           }" width="130px" height ="210px" alt=""/>
         </div>
         <div class="row justify-content-center align-items-center g-2">
-          <p class="h3">${item.name}</p>
+          <p class="h4 font-weight-bold">${item.name}</p>
         </div>
         <div class="row justify-content-center align-items-center g-2">
-          <p class="h5">Hãng sản xuất: ${item.manufacturer}</p>
+          <p class="h4">Hãng sản xuất: ${item.manufacturer}</p>
         </div>
         <div class="row justify-content-center align-items-center g-2">
         <ul class="rating d-flex list-unstyled">

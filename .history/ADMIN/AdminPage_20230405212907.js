@@ -1,9 +1,12 @@
 let productList = [];
 let idUpdate = "";
-
-loadComponent();
-
+const modal_el = document.querySelector(".updateModal");
+const modal = new bootstrap.Modal(modal_el, { backdrop: static });
+$(function () {
+  loadComponent();
+});
 function loadComponent() {
+  // $(".adminMenu").load("./adminMenu.html");
   document.querySelector(
     ".adminMenu"
   ).innerHTML = `<div class="row justify-content-center align-items-center g-2">
@@ -48,7 +51,7 @@ function loadComponent() {
   </nav>
 </div>
   `;
-
+  // $(".adminSideBar").load("./adminSideBar.html");
   document.querySelector(".adminSideBar").innerHTML = `<div class="col-md-12">
   <h4 class="fw-bold">Danh mục</h4>
   <div class="list-group text-center">
@@ -121,6 +124,7 @@ function loadComponent() {
   </ul>
 </div>
   `;
+  // $(".contentProduct").load("./contentProduct.html");
 }
 
 function showManufacturer(params) {
@@ -129,6 +133,13 @@ function showManufacturer(params) {
   ).innerHTML = `<h1>This is Manufacturer Page Content</h1>`;
 }
 function showProduct(params) {
+  // $(".contentProduct").load(
+  //   "./contentProduct.html",
+  //   "data",
+  //   function (response, status, request) {
+  //     renderProduct(); // dom element
+  //   }
+  // );
   document.querySelector(".contentProduct").innerHTML = `
   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
       <br />
@@ -511,7 +522,7 @@ function showProduct(params) {
                   <!-- Action -->
 
                   <div class="col-12">
-                    <button type="button" class="btn btn-primary fw-semibold" onclick ="updateProduct()" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-primary fw-semibold" onclick ="updateProduct()">
                       Update
                     </button>
                     <button

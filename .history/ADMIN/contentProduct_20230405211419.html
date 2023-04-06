@@ -1,136 +1,14 @@
-let productList = [];
-let idUpdate = "";
-
-loadComponent();
-
-function loadComponent() {
-  document.querySelector(
-    ".adminMenu"
-  ).innerHTML = `<div class="row justify-content-center align-items-center g-2">
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container">
-      <button
-        class="navbar-toggler d-lg-none"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a
-              class="nav-link fw-bold"
-              href="../HOME/HomePage.html"
-              aria-current="page"
-              >Home <span class="visually-hidden">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="#">Admin</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav d-flex my-2 my-lg-0 list-unstyled">
-          <li>
-            <a href="#!" class="nav-link text-decoration-none fw-bold"
-              ><i class="fa fa-sign-out pe-1" aria-hidden="true"></i>Sign
-              out</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-  `;
-
-  document.querySelector(".adminSideBar").innerHTML = `<div class="col-md-12">
-  <h4 class="fw-bold">Danh mục</h4>
-  <div class="list-group text-center">
-    <button
-      type="button"
-      class="list-group-item list-group-item-action"
-      onclick="showManufacturer()"
-    >
-      Manufacturer
-    </button>
-    <button
-      type="button"
-      class="list-group-item list-group-item-action"
-      onclick="showCategory()"
-    >
-      Category
-    </button>
-    <button
-      type="button"
-      class="list-group-item list-group-item-action product-btn"
-      onclick="showProduct()"
-    >
-      Product
-    </button>
-    <button
-      type="button"
-      class="list-group-item list-group-item-action"
-      onclick="showAccount()"
-    >
-      Account
-    </button>
-  </div>
-
-  <h4 class="fw-bold">Manufacturers</h4>
-  <div class="list-group text-center">
-    <button
-      type="button"
-      class="list-group-item list-group-item-action"
-      aria-current="true"
-    >
-      SAMSUNG
-    </button>
-    <button type="button" class="list-group-item list-group-item-action">
-      APPLE
-    </button>
-    <button type="button" class="list-group-item list-group-item-action">
-      XIAOMI
-    </button>
-    <button type="button" class="list-group-item list-group-item-action">
-      OPPO
-    </button>
-  </div>
-  <h4 class="fw-bold">Category</h4>
-  <ul class="list-group">
-    <li class="list-group-item" aria-current="true">
-      <div class="mb-3">
-        <select class="form-select form-select-md" name="" id="">
-          <option selected>Category</option>
-          <option value="1">Mobile Phone</option>
-          <option value="2">Tablet</option>
-          <option value="3">Laptop</option>
-        </select>
-      </div>
-    </li>
-    <li class="list-group-item" aria-current="true">
-      <button type="button" class="btn btn-outline-secondary">
-        Filter
-      </button>
-    </li>
-  </ul>
-</div>
-  `;
-}
-
-function showManufacturer(params) {
-  document.querySelector(
-    ".contentProduct"
-  ).innerHTML = `<h1>This is Manufacturer Page Content</h1>`;
-}
-function showProduct(params) {
-  document.querySelector(".contentProduct").innerHTML = `
-  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContentProduct</title>
+    <link rel="stylesheet" href="./asset/css/Adminpage.css" />
+  </head>
+  <body>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
       <br />
       <br />
       <!-- Search -->
@@ -327,7 +205,7 @@ function showProduct(params) {
                       name="manufacturer"
                       id="manufacturer"
                     >
-                      <option selected value ="0">--Choose a Manufacturer--</option>
+                      <option selected>--Choose a Manufacturer--</option>
                       <option value="SAMSUNG">SAMSUNG</option>
                       <option value="APPLE">APPLE</option>
                       <option value="XIAOMI">XIAOMI</option>
@@ -341,7 +219,7 @@ function showProduct(params) {
                       name=""
                       id="category"
                     >
-                      <option selected value="0" >--Choose a Category--</option>
+                      <option selected>--Choose a Category--</option>
                       <option value="Mobile Phone">Mobile Phone</option>
                       <option value="Tablet">Tablet</option>
                       <option value="Laptop">Laptop</option>
@@ -487,7 +365,7 @@ function showProduct(params) {
                       name="updateManufacturer"
                       id="updateManufacturer"
                     >
-                      <option selected value ="0">--Choose a Manufacturer--</option>
+                      <option selected>--Choose a Manufacturer--</option>
                       <option value="SAMSUNG">SAMSUNG</option>
                       <option value="APPLE">APPLE</option>
                       <option value="XIAOMI">XIAOMI</option>
@@ -501,7 +379,7 @@ function showProduct(params) {
                       name="updateCategory"
                       id="updateCategory"
                     >
-                      <option selected value ="0">--Choose a Category--</option>
+                      <option selected>--Choose a Category--</option>
                       <option value="Mobile Phone">Mobile Phone</option>
                       <option value="Tablet">Tablet</option>
                       <option value="Laptop">Laptop</option>
@@ -511,7 +389,7 @@ function showProduct(params) {
                   <!-- Action -->
 
                   <div class="col-12">
-                    <button type="button" class="btn btn-primary fw-semibold" onclick ="updateProduct()" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-primary fw-semibold">
                       Update
                     </button>
                     <button
@@ -538,174 +416,6 @@ function showProduct(params) {
           </div>
         </div>
       </div>
-    </div>`;
-}
-function showCategory() {
-  document.querySelector(
-    ".contentProduct"
-  ).innerHTML = `<h1>This is Category Page Content</h1>`;
-}
-function showAccount() {
-  document.querySelector(
-    ".contentProduct"
-  ).innerHTML = `<h1>This is Account Page Content</h1>`;
-}
-
-function addNewProduct() {
-  let getId = document.querySelector("#id").value;
-  let getName = document.querySelector("#name").value;
-  let getPrice = document.querySelector("#price").value;
-  let getInfo = document.querySelector("#info").value;
-  let getDetail = document.querySelector("#detail").value;
-  let getStar = document.querySelector("#star").value;
-  let getImage = getImgName(document.querySelector("#image").value);
-  let getManufacturer = document.querySelector("#manufacturer").value;
-  let getCategory = document.querySelector("#category").value;
-  let newProduct = {
-    id: getId,
-    name: getName,
-    price: getPrice,
-    info: getInfo,
-    detail: getDetail,
-    star: getStar,
-    image: getImage,
-    manufacturer: getManufacturer,
-    category: getCategory,
-  };
-  // Push vao mang productList
-  productList.push(newProduct);
-  // console.log("listProduct", productList);
-  localStorage.setItem("Product", JSON.stringify(productList));
-  // console.log(localStorage.setItem("Product", JSON.stringify(productList)));
-  resetForm();
-  renderProduct();
-}
-function resetForm() {
-  document.querySelector("#id").value = "";
-  document.querySelector("#name").value = "";
-  document.querySelector("#info").value = "";
-  document.querySelector("#price").value = "";
-  document.querySelector("#detail").value = "";
-  document.querySelector("#star").value = "";
-  document.querySelector("#image").value = "";
-  document.querySelector("#manufacturer").value = "";
-  document.querySelector("#category").value = "";
-}
-
-function renderProduct() {
-  //Check localStorage
-  if (localStorage && localStorage.getItem("Product")) {
-    let products = JSON.parse(localStorage.getItem("Product"));
-    productList = products;
-  }
-  document.querySelector("#tableBody").innerHTML = "";
-  for (let index = 0; index < productList.length; index++) {
-    document.querySelector("#tableBody").innerHTML += `
-    <tr>
-    <td scope="row">${productList[index].id}</td>
-    <td>${productList[index].name}</td>
-    <td>${productList[index].price}<sup>đ</sup></td>
-    <td>${productList[index].info}</td>
-    <td>${productList[index].detail}</td>
-    <td>${productList[index].star}</td>
-    <td>${productList[index].image}</td>
-    <td>${productList[index].manufacturer}</td>
-    <td>${productList[index].category}</td>
-    <td>
-      <button type="button" class="btn btn-warning text-light" onclick ="editProduct(${productList[index].id})">
-        Edit
-      </button>
-    </td>
-    <td>
-      <button type="button" class="btn btn-danger text-white" onclick="deleteProduct(${productList[index].id})">
-        Delete
-      </button>
-    </td>
-  </tr> 
-    `;
-  }
-}
-function getImgName(pathImage) {
-  let itemArray = pathImage.split("\\");
-  var imageName = itemArray[itemArray.length - 1];
-  return imageName;
-}
-//Xóa sản phẩm
-
-function deleteProduct(id) {
-  let confirmDelete = confirm("Delete it?");
-  if (confirmDelete) {
-    let idDelete = productList.findIndex((obj) => obj.id == id);
-    console.log(idDelete);
-    if (idDelete !== -1) {
-      productList.splice(idDelete, 1);
-      /**Lưu lại productList sau khi cắt vào local */
-      localStorage.setItem("Product", JSON.stringify(productList));
-      renderProduct();
-    } else {
-      alert("No products to delete!");
-    }
-  }
-}
-
-// Update product
-
-function editProduct(idEdit) {
-  idUpdate = idEdit;
-  /**idEdit - id Sản phẩm */
-  let index = productList.findIndex((obj) => obj.id == idUpdate);
-  // show update Modal
-  const updateModal = new bootstrap.Modal(
-    document.querySelector("#updateModal")
-  );
-  updateModal.show();
-  document.querySelector("#updateId").value = productList[index].id;
-  document.querySelector("#updateName").value = productList[index].name;
-  document.querySelector("#updatePrice").value = productList[index].price;
-  document.querySelector("#updateInfo").value = productList[index].info;
-  document.querySelector("#updateDetail").value = productList[index].detail;
-  document.querySelector("#updateStar").value = productList[index].star;
-  document.querySelector("#updateManufacturer").value =
-    productList[index].manufacturer;
-  document.querySelector("#updateCategory").value = productList[index].category;
-}
-function resetUpdate() {
-  document.querySelector("#updateId").value = "";
-  document.querySelector("#updateName").value = "";
-  document.querySelector("#updatePrice").value = "";
-  document.querySelector("#updateInfo").value = "";
-  document.querySelector("#updateDetail").value = "";
-  document.querySelector("#updateStar").value = "";
-  document.querySelector("#updateManufacturer").value = "";
-  document.querySelector("#updateCategory").value = "";
-}
-function updateProduct() {
-  /** Tìm kiếm index của phần tử obj có id = idUpdate */
-  let index = productList.findIndex((obj) => obj.id == idUpdate);
-  let updateName = document.querySelector("#updateName").value;
-  let updatePrice = document.querySelector("#updatePrice").value;
-  let updateInfo = document.querySelector("#updateInfo").value;
-  let updateDetail = document.querySelector("#updateDetail").value;
-  let updateStar = document.querySelector("#updateStar").value;
-  /**Lấy lại tên ảnh cũ */
-  let updateImage = getImgName(document.querySelector("#updateImage").value);
-  let updateManufacturer = document.querySelector("#updateManufacturer").value;
-  let updateCategory = document.querySelector("#updateCategory").value;
-  // console.log(productList[index].name);
-  productList[index].name = updateName;
-  productList[index].price = updatePrice;
-  productList[index].info = updateInfo;
-  productList[index].detail = updateDetail;
-  productList[index].star = updateStar;
-  /**Nếu người dùng chọn lại ảnh thì lấy ảnh mới, không thì vẫn ảnh cũ */
-  if (updateImage !== null && updateImage !== "") {
-    productList[index].image = updateImage;
-  }
-
-  productList[index].manufacturer = updateManufacturer;
-  productList[index].category = updateCategory;
-
-  localStorage.setItem("Product", JSON.stringify(productList));
-  resetUpdate();
-  renderProduct();
-}
+    </div>
+  </body>
+</html>

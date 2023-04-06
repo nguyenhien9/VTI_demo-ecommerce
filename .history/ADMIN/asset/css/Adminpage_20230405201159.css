@@ -1,0 +1,7 @@
+html {
+  font-size: 16px;
+}
+.showModal {
+  opacity: 1;
+  visibility: visible;
+}

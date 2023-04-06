@@ -1,0 +1,14 @@
+html {
+  font-size: 16px;
+}
+#updateModal {
+  opacity: 0;
+  visibility: hidden;
+  font-size: 50px;
+}
+
+.showModal {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}

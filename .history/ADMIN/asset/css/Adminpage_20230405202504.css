@@ -1,0 +1,13 @@
+html {
+  font-size: 16px;
+}
+.editModal {
+  opacity: 0;
+  visibility: hidden;
+  font-size: 50px;
+}
+
+.editModal.showModal {
+  opacity: 1;
+  visibility: visible;
+}

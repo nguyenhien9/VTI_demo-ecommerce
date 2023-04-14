@@ -142,7 +142,7 @@ function fetchProductList() {
       <div class="col-sm-3">
         <div class="row justify-content-start align-items-center g-2 ">
           <img src="./asset/img/Product/${
-            item.imageName
+            item.image
           }" width="130px" height ="190px" alt=""/>
         </div>
         <div class="row justify-content-center align-items-center g-2">

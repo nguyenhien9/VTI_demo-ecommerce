@@ -577,7 +577,7 @@ function addNewProduct() {
   productList.push(product);
   localStorage.setItem("Products", JSON.stringify(productList));
   resetAddForm();
-  console.log(imageName);
+  // console.log(imageName);
   renderProductList();
 }
 function resetAddForm() {
@@ -644,7 +644,7 @@ function editProduct(editID) {
   modal.show();
   // assign id of updating product = id of edit product
   idUpdate = editID;
-  // return index when productList.id == editID
+  // return index when productList.id === editID
   let index = productList.findIndex((obj) => obj.id == editID);
   // recall value of productList items to updateModal
   document.querySelector("#updateId").value = productList[index].id;

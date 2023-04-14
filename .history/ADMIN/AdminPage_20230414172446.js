@@ -599,7 +599,7 @@ function renderProductList() {
     ? JSON.parse(localStorage.getItem("Products"))
     : [];
   productList = getProductList;
-  document.querySelector("#tableBody").innerHTML = "";
+  // document.querySelector("#tableBody").innerHTML = "";
   for (let index = 0; index < productList.length; index++) {
     document.querySelector("#tableBody").innerHTML += `
     <tr>
@@ -644,7 +644,7 @@ function editProduct(editID) {
   modal.show();
   // assign id of updating product = id of edit product
   idUpdate = editID;
-  // return index when productList.id == editID
+  // return index when productList.id === editID
   let index = productList.findIndex((obj) => obj.id == editID);
   // recall value of productList items to updateModal
   document.querySelector("#updateId").value = productList[index].id;

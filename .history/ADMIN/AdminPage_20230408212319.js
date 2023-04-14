@@ -605,7 +605,7 @@ function renderProductList() {
     <tr>
       <td scope ="row">${productList[index].id}</td>
       <td>${productList[index].name}</td>
-      <td>${productList[index].price}<sup><u>đ</u></sup></td>
+      <td>${productList[index].price}</td>
       <td>${productList[index].info}</td>
       <td>${productList[index].detail}</td>
       <td>${productList[index].star}</td>
@@ -644,7 +644,7 @@ function editProduct(editID) {
   modal.show();
   // assign id of updating product = id of edit product
   idUpdate = editID;
-  // return index when productList.id == editID
+  // return index when productList.id === editID
   let index = productList.findIndex((obj) => obj.id == editID);
   // recall value of productList items to updateModal
   document.querySelector("#updateId").value = productList[index].id;
@@ -672,7 +672,6 @@ function resetUpdate() {
 function updateProduct() {
   // find index of updating product
   let index = productList.findIndex((obj) => obj.id == idUpdate);
-
   let updateName = document.querySelector("#updateName").value;
   let updatePrice = document.querySelector("#updatePrice").value;
   let updateInfo = document.querySelector("#updateInfo").value;
@@ -688,15 +687,15 @@ function updateProduct() {
   productList[index].info = updateInfo;
   productList[index].detail = updateDetail;
   productList[index].star = updateStar;
-  /**keep current imageName if not change */
+  /**Nếu người dùng chọn lại ảnh thì lấy ảnh mới, không thì vẫn ảnh cũ */
   if (updateImage !== null && updateImage !== "") {
-    productList[index].imageName = updateImage;
+    productList[index].image = updateImage;
   }
 
   productList[index].manufacturer = updateManufacturer;
   productList[index].category = updateCategory;
-  localStorage.setItem("Products", JSON.stringify(productList));
 
+  localStorage.setItem("Product", JSON.stringify(productList));
+  resetUpdate();
   renderProductList();
-  // resetUpdate();
 }

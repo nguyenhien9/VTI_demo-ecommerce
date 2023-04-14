@@ -382,9 +382,7 @@ function showProduct(params) {
           </div>
         </div>
       </div>
-
       <!-- Modal Edit -->
-      
       <div
         class="modal fade"
         id="updateModal"
@@ -513,7 +511,7 @@ function showProduct(params) {
                   <!-- Action -->
 
                   <div class="col-12">
-                    <button type="button" class="btn btn-primary fw-semibold" onclick ="updateProduct()" >
+                    <button type="button" class="btn btn-primary fw-semibold" onclick ="updateProduct()" data-bs-dismiss="modal">
                       Update
                     </button>
                     <button
@@ -559,7 +557,7 @@ function addNewProduct() {
   let getInfo = document.querySelector("#info").value;
   let getDetail = document.querySelector("#detail").value;
   let getStar = document.querySelector("#star").value;
-  let imageName = getImageName(document.querySelector("#image").value);
+  // let getImageName
   let getManufacturer = document.querySelector("#manufacturer").value;
   let getCategory = document.querySelector("#category").value;
 
@@ -570,14 +568,12 @@ function addNewProduct() {
     info: getInfo,
     detail: getDetail,
     star: getStar,
-    imageName: imageName,
     manufacturer: getManufacturer,
     category: getCategory,
   };
   productList.push(product);
   localStorage.setItem("Products", JSON.stringify(productList));
   resetAddForm();
-  console.log(imageName);
   renderProductList();
 }
 function resetAddForm() {
@@ -587,7 +583,6 @@ function resetAddForm() {
   document.querySelector("#info").value = "";
   document.querySelector("#detail").value = "";
   document.querySelector("#star").value = "";
-  document.querySelector("#image").value = "";
   document.querySelector("#manufacturer").value = "";
   document.querySelector("#category").value = "";
 }
@@ -599,104 +594,4 @@ function renderProductList() {
     ? JSON.parse(localStorage.getItem("Products"))
     : [];
   productList = getProductList;
-  document.querySelector("#tableBody").innerHTML = "";
-  for (let index = 0; index < productList.length; index++) {
-    document.querySelector("#tableBody").innerHTML += `
-    <tr>
-      <td scope ="row">${productList[index].id}</td>
-      <td>${productList[index].name}</td>
-      <td>${productList[index].price}<sup><u>đ</u></sup></td>
-      <td>${productList[index].info}</td>
-      <td>${productList[index].detail}</td>
-      <td>${productList[index].star}</td>
-      <td>${productList[index].imageName}</td>
-      <td>${productList[index].manufacturer}</td>
-      <td>${productList[index].category}</td>
-      <td><button class="btn btn-warning text-light" onclick ="editProduct(${productList[index].id})" >Edit</button></td>
-      <td><button class="btn btn-danger text-light" onclick ="deleteProduct(${productList[index].id})">Delete</button></td>
-
-    </tr>
-    `;
-  }
-}
-
-function getImageName(imgPath) {
-  let itemArray = imgPath.split("\\");
-  let imageName = itemArray[itemArray.length - 1];
-  return imageName;
-}
-function deleteProduct(deleteID) {
-  let confirmDelete = confirm("Delete it?");
-  if (confirmDelete) {
-    let index = productList.findIndex((obj) => obj.id == deleteID);
-    if (index !== -1) {
-      productList.splice(index, 1);
-      localStorage.setItem("Products", JSON.stringify(productList));
-      renderProductList();
-    } else {
-      alert("Nothing deleted");
-    }
-  }
-}
-function editProduct(editID) {
-  // show modal when clicking
-  const modal = new bootstrap.Modal(document.querySelector("#updateModal"));
-  modal.show();
-  // assign id of updating product = id of edit product
-  idUpdate = editID;
-  // return index when productList.id == editID
-  let index = productList.findIndex((obj) => obj.id == editID);
-  // recall value of productList items to updateModal
-  document.querySelector("#updateId").value = productList[index].id;
-  document.querySelector("#updateName").value = productList[index].name;
-  document.querySelector("#updatePrice").value = productList[index].price;
-  document.querySelector("#updateInfo").value = productList[index].info;
-  document.querySelector("#updateDetail").value = productList[index].detail;
-  document.querySelector("#updateStar").value = productList[index].star;
-  document.querySelector("#updateManufacturer").value =
-    productList[index].manufacturer;
-  document.querySelector("#updateCategory").value = productList[index].category;
-}
-
-function resetUpdate() {
-  document.querySelector("#updateId").value = "";
-  document.querySelector("#updateName").value = "";
-  document.querySelector("#updatePrice").value = "";
-  document.querySelector("#updateInfo").value = "";
-  document.querySelector("#updateDetail").value = "";
-  document.querySelector("#updateStar").value = "";
-  document.querySelector("#updateImage").value = "";
-  document.querySelector("#updateManufacturer").value = "";
-  document.querySelector("#updateCategory").value = "";
-}
-function updateProduct() {
-  // find index of updating product
-  let index = productList.findIndex((obj) => obj.id == idUpdate);
-
-  let updateName = document.querySelector("#updateName").value;
-  let updatePrice = document.querySelector("#updatePrice").value;
-  let updateInfo = document.querySelector("#updateInfo").value;
-  let updateDetail = document.querySelector("#updateDetail").value;
-  let updateStar = document.querySelector("#updateStar").value;
-  /**Lấy lại tên ảnh cũ */
-  let updateImage = getImageName(document.querySelector("#updateImage").value);
-  let updateManufacturer = document.querySelector("#updateManufacturer").value;
-  let updateCategory = document.querySelector("#updateCategory").value;
-  // console.log(productList[index].name);
-  productList[index].name = updateName;
-  productList[index].price = updatePrice;
-  productList[index].info = updateInfo;
-  productList[index].detail = updateDetail;
-  productList[index].star = updateStar;
-  /**keep current imageName if not change */
-  if (updateImage !== null && updateImage !== "") {
-    productList[index].imageName = updateImage;
-  }
-
-  productList[index].manufacturer = updateManufacturer;
-  productList[index].category = updateCategory;
-  localStorage.setItem("Products", JSON.stringify(productList));
-
-  renderProductList();
-  // resetUpdate();
 }
